@@ -1,0 +1,6 @@
+framework module Pods_Understanding_USAA {
+  umbrella header "Pods-Understanding USAA-umbrella.h"
+
+  export *
+  module * { export * }
+}

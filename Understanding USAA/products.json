@@ -1,0 +1,189 @@
+{
+    "products": [
+                 {
+                 "title": "Auto Insurance",
+                 "category": "Insurance",
+                 "icon": "icon-auto",
+                 "url": "https://www.usaa.com/inet/wc/auto_insurance_main"
+                 },
+                 {
+                 "title": "Renters Insurance",
+                 "category": "Insurance",
+                 "icon": "icon-renters",
+                 "url": "https://www.usaa.com/inet/wc/insurance_home_renters"
+                 },
+                 {
+                 "title": "Homeowners Insurance",
+                 "category": "Insurance",
+                 "icon": "icon-homeowners",
+                 "url": "https://www.usaa.com/inet/wc/insurance_home_condo"
+                 },
+                 {
+                 "title": "Life Insurance",
+                 "category": "Insurance",
+                 "icon": "icon-life",
+                 "url": "https://www.usaa.com/inet/pages/insurance_life_main"
+                 },
+                 {
+                 "title": "Motorcycle, RV, & Boat Insurance",
+                 "category": "Insurance",
+                 "icon": "icon-motorcycle",
+                 "url": "https://www.usaa.com/inet/wc/recreational_vehicle_insurance_main"
+                 },
+                 {
+                 "title": "Pet Health",
+                 "category": "Insurance",
+                 "icon": "icon-pet",
+                 "url": "https://www.usaa.com/inet/pages/insurance_pet_main"
+                 },
+                 
+                 {
+                 "title": "Checkings Account",
+                 "category": "Banking",
+                 "icon": "icon-checkings",
+                 "url": "https://www.usaa.com/inet/pages/bank_checking_main"
+                 },
+                 {
+                 "title": "Savings Account",
+                 "category": "Banking",
+                 "icon": "icon-savings",
+                 "url": "https://www.usaa.com/inet/wc/bank-savings"
+                 },
+                 {
+                 "title": "Credit Cards",
+                 "category": "Banking",
+                 "icon": "icon-credit",
+                 "url": "https://www.usaa.com/inet/wc/banking_credit_cards_main"
+                 },
+                 {
+                 "title": "Home Mortgages",
+                 "category": "Banking",
+                 "icon": "icon-home",
+                 "url": "https://www.usaa.com/inet/wc/bank-real-estate-mortgage-loans"
+                 },
+                 {
+                 "title": "Personal Loans",
+                 "category": "Banking",
+                 "icon": "icon-personal",
+                 "url": "https://www.usaa.com/inet/pages/bank_loan_personal"
+                 },
+                 {
+                 "title": "Credit Monitoring, and ID Protections",
+                 "category": "Banking",
+                 "icon": "icon-credit-monitoring",
+                 "url": "https://www.usaa.com/inet/wc/creditcheck_monitoring_main"
+                 },
+                 {
+                 "title": "College Products",
+                 "category": "Banking",
+                 "icon": "icon-college",
+                 "url": "https://www.usaa.com/inet/pages/college_savings_and_money"
+                 },
+                 
+                 {
+                 "title": "USAA Mutual Funds",
+                 "category": "Investing",
+                 "icon": "icon-mutual",
+                 "url": "https://www.usaa.com/inet/wc/investments-usaa-mutual-funds"
+                 },
+                 {
+                 "title": "Digital Investment Adviser",
+                 "category": "Investing",
+                 "icon": "icon-digital",
+                 "url": "https://www.usaa.com/inet/wc/investments-digital-investment-advisor"
+                 },
+                 {
+                 "title": "Stocks & Options",
+                 "category": "Investing",
+                 "icon": "icon-stocks",
+                 "url": "https://www.usaa.com/inet/wc/investments-stocks-options"
+                 },
+                 {
+                 "title": "529 College Savings",
+                 "category": "Investing",
+                 "icon": "icon-529-college",
+                 "url": "https://www.usaa.com/inet/wc/investments-529-college-savings-plan"
+                 },
+                 
+                 {
+                 "title": "First-Time Homebuyer",
+                 "category": "Real Estate",
+                 "icon": "icon-first",
+                 "url": "https://www.usaa.com/inet/wc/bank-real-estate-first-time-homebuyer"
+                 },
+                 {
+                 "title": "Mortgages",
+                 "category": "Real Estate",
+                 "icon": "icon-mortgage",
+                 "url": "https://www.usaa.com/inet/wc/bank-real-estate-mortgage-loans"
+                 },
+                 {
+                 "title": "VA Loans",
+                 "category": "Real Estate",
+                 "icon": "icon-va-loans",
+                 "url": "https://www.usaa.com/inet/wc/bank-real-estate-va-loan"
+                 },
+                 {
+                 "title": "Find a Real Estate Agent",
+                 "category": "Real Estate",
+                 "icon": "icon-find-real-estate",
+                 "url": "https://www.usaa.com/inet/wc/bank_real_estate_rewards_network_main"
+                 },
+                 {
+                 "title": "Find a Home",
+                 "category": "Real Estate",
+                 "icon": "icon-find-home",
+                 "url": "https://www.usaa.com/inet/wc/bank_real_estate_home_search_transition"
+                 },
+                 
+                 {
+                 "title": "Rollovers and Transfers",
+                 "category": "Retirements and IRAs",
+                 "icon": "icon-rollover",
+                 "url": "https://www.usaa.com/inet/wc/investments-rollovers-transfers"
+                 },
+                 {
+                 "title": "Target Retirement Funds",
+                 "category": "Retirements and IRAs",
+                 "icon": "icon-target",
+                 "url": "https://www.usaa.com/inet/wc/investments-target-retirement-funds"
+                 },
+                 {
+                 "title": "USAA Wealth Management",
+                 "category": "Retirements and IRAs",
+                 "icon": "icon-wealth",
+                 "url": "https://www.usaa.com/inet/wc/investments-wealth-management"
+                 },
+                 {
+                 "title": "Long-Term Care",
+                 "category": "Retirements and IRAs",
+                 "icon": "icon-care",
+                 "url": "https://www.usaa.com/inet/pages/long_term_care_insurance_main"
+                 },
+                 
+                 {
+                 "title": "Home Solutions",
+                 "category": "Shopping and Discounts",
+                 "icon": "icon-home-solutions",
+                 "url": "https://www.usaa.com/inet/pages/home_online_security_main"
+                 },
+                 {
+                 "title": "Travel Deals",
+                 "category": "Shopping and Discounts",
+                 "icon": "icon-travel",
+                 "url": "https://www.usaa.com/inet/pages/travel_main"
+                 },
+                 {
+                 "title": "Online Shopping",
+                 "category": "Shopping and Discounts",
+                 "icon": "icon-online",
+                 "url": "https://www.usaa.com/inet/wc/retail_and_discounts_main"
+                 },
+                 {
+                 "title": "Car Buying Service",
+                 "category": "Shopping and Discounts",
+                 "icon": "icon-car-buying",
+                 "url": "https://www.usaa.com/inet/pages/car_buying_services_products"
+                 }
+        ]
+}
