@@ -17,6 +17,7 @@ public class Product {
     var title: String = ""
     var description: String = ""
     var url: String = ""
+    var employeeOnly: Bool = false
     
     
 }

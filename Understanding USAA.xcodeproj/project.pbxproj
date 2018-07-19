@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F1FC886FEC458D29BF0D843 /* Pods_Understanding_USAA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBC8DD852D7DFC223572C44 /* Pods_Understanding_USAA.framework */; };
+		34A406382100E6770016464D /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A406372100E6770016464D /* FeaturedViewController.swift */; };
+		34A4063A210105370016464D /* SnappingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A40639210105370016464D /* SnappingCollectionViewLayout.swift */; };
 		34F2148420FFB3CD00ADCC91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2148320FFB3CD00ADCC91 /* AppDelegate.swift */; };
 		34F2148620FFB3CD00ADCC91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2148520FFB3CD00ADCC91 /* ViewController.swift */; };
 		34F2148920FFB3CD00ADCC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F2148720FFB3CD00ADCC91 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		2A1FAF335C4926B1DB0C73B7 /* Pods-Understanding USAA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Understanding USAA.release.xcconfig"; path = "Pods/Target Support Files/Pods-Understanding USAA/Pods-Understanding USAA.release.xcconfig"; sourceTree = "<group>"; };
 		32672D7161CB87CC62522ED3 /* Pods-Understanding USAAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Understanding USAAUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Understanding USAAUITests/Pods-Understanding USAAUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		34A406372100E6770016464D /* FeaturedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
+		34A40639210105370016464D /* SnappingCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnappingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		34F2148020FFB3CD00ADCC91 /* Understanding USAA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Understanding USAA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F2148320FFB3CD00ADCC91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34F2148520FFB3CD00ADCC91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		34F2148220FFB3CD00ADCC91 /* Understanding USAA */ = {
 			isa = PBXGroup;
 			children = (
+				34A40639210105370016464D /* SnappingCollectionViewLayout.swift */,
 				34F214BF2100238200ADCC91 /* Understanding USAA.entitlements */,
 				34F2148320FFB3CD00ADCC91 /* AppDelegate.swift */,
 				34F2148520FFB3CD00ADCC91 /* ViewController.swift */,
@@ -140,6 +145,7 @@
 				34F214B720FFEA9300ADCC91 /* Icons */,
 				34F214BB20FFFBA900ADCC91 /* WebViewController.swift */,
 				34F214BD2100217400ADCC91 /* GoogleService-Info.plist */,
+				34A406372100E6770016464D /* FeaturedViewController.swift */,
 			);
 			path = "Understanding USAA";
 			sourceTree = "<group>";
@@ -412,9 +418,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F2148620FFB3CD00ADCC91 /* ViewController.swift in Sources */,
+				34A4063A210105370016464D /* SnappingCollectionViewLayout.swift in Sources */,
 				34F214B420FFDCA800ADCC91 /* Product.swift in Sources */,
 				34F214B220FFDBA000ADCC91 /* CustomCollectionViewCell.swift in Sources */,
 				34F214BC20FFFBA900ADCC91 /* WebViewController.swift in Sources */,
+				34A406382100E6770016464D /* FeaturedViewController.swift in Sources */,
 				34F2148420FFB3CD00ADCC91 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

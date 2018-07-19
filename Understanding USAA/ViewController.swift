@@ -16,7 +16,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var filterOutlet: UIButton!
     @IBOutlet weak var categoryOutlet: UIButton!
+    @IBOutlet weak var toggleButton: UIBarButtonItem!
     
+    @IBAction func toggleAction(_ sender: Any) {
+        if seeSuggested == 1 {
+            toggleButton.title = "See Suggested"
+            seeSuggested = 0
+            setupInitial()
+        }
+        else {
+            toggleButton.title = "See All"
+            seeSuggested = 1
+            setupInitial()
+        }
+    }
     @IBAction func filterAction(_ sender: Any) {
     }
     @IBAction func categoryAction(_ sender: Any) {
@@ -25,6 +38,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var URLToPass = ""
     var titleToPass = ""
     var searchResult = ""
+    var seeSuggested = 1
     
     var ref: DatabaseReference!
     var products: [Product] = []
@@ -74,7 +88,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func setupInitial() {
         
         products.removeAll()
-        let childRef = Database.database().reference(withPath: "products")
+        
+        
+        let childRef = Database.database().reference(withPath: "profiles/\(seeSuggested)/products")
         
         
         childRef.observeSingleEvent(of: .value) { snapshot in
@@ -82,7 +98,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         //childRef.observe(.value, with: { snapshot in
             
             let json = JSON(snapshot.value)
-            
+            //let profile = json[1]["products"]
             
             for (key, subJson) in json {
                 
@@ -100,8 +116,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     product.category = category
                     
                     self.products.append(product)
-                    
-                    print("RUNNING SETUP INITIAL AGAINNN")
+
                 }
             }
             
@@ -117,32 +132,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     func setupChildChanged() {
-        
-        print(self.products.count)
 
 
-        let childRef = Database.database().reference(withPath: "products")
+        let superSetRef = Database.database().reference(withPath: "profiles/0/products")
 
-        childRef.observe(.childChanged, with: { snapshot in
-
+        superSetRef.observe(.childChanged, with: { snapshot in
             
-
-            let json = JSON(snapshot.value)
-            
-            print(json)
-            
-            print(snapshot.key)
-            
-            let icon = json["icon"].string!
-            let title = json["title"].string!
-            let url = json["url"].string!
-            let category = json["category"].string!
-            
-            print(self.products.count)
-            
-            if title.lowercased().contains(self.searchResult.lowercased()) || self.searchResult == "" || category.lowercased().contains(self.searchResult.lowercased()) {
+            if self.searchResult == "" && self.seeSuggested == 0 {
+                let json = JSON(snapshot.value)
                 
-                print(self.products[Int(snapshot.key)!].title)
+                
+                let icon = json["icon"].string!
+                let title = json["title"].string!
+                let url = json["url"].string!
+                let category = json["category"].string!
                 
                 let product = self.products[Int(snapshot.key)!]
                 product.title = title
@@ -150,68 +153,56 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 product.url = url
                 product.category = category
                 
-                print(self.products[Int(snapshot.key)!].title)
+                DispatchQueue.main.async {
+                    let indexPath = IndexPath(row: Int(snapshot.key)!, section: 0)
+                    
+                    self.collectionView.performBatchUpdates({
+                        self.collectionView.reloadItems(at: [IndexPath(row: Int(snapshot.key)!, section: 0)])
+                    }, completion: nil)
+                }
+            }
+
+        })
+        
+        let suggestSetRef = Database.database().reference(withPath: "profiles/1/products")
+        
+        suggestSetRef.observe(.childChanged, with: { snapshot in
+            
+            if self.searchResult == "" && self.seeSuggested == 1 {
+                let json = JSON(snapshot.value)
                 
-                print(self.products.count)
+                
+                let icon = json["icon"].string!
+                let title = json["title"].string!
+                let url = json["url"].string!
+                let category = json["category"].string!
+                
+                let product = self.products[Int(snapshot.key)!]
+                product.title = title
+                product.image = UIImage(named: icon)
+                product.url = url
+                product.category = category
+                
+                DispatchQueue.main.async {
+                    let indexPath = IndexPath(row: Int(snapshot.key)!, section: 0)
+                    
+                    self.collectionView.performBatchUpdates({
+                        self.collectionView.reloadItems(at: [IndexPath(row: Int(snapshot.key)!, section: 0)])
+                    }, completion: nil)
+                }
             }
-
-            DispatchQueue.main.async {
-                self.collectionView.reloadItems(at: [IndexPath(row: Int(snapshot.key)!, section: 0)])
-            }
-
-
+            
         })
 
     }
     
-        
-        
-//        if let path = Bundle.main.path(forResource: "products", ofType: "json") {
-//
-//            do {
-//                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-//
-//                let jsonData = try JSON(data: data)
-//
-//                for (key, subJson) in jsonData["products"] {
-//
-//                    let icon = subJson["icon"].string!
-//                    let title = subJson["title"].string!
-//                    let url = subJson["url"].string!
-//                    let category = subJson["category"].string!
-//
-//                    if title.lowercased().contains(self.searchResult.lowercased()) || self.searchResult == "" || category.lowercased().contains(self.searchResult.lowercased()) {
-//
-//                        let product = Product()
-//                        product.title = title
-//                        product.image = UIImage(named: icon)
-//                        product.url = url
-//                        product.category = category
-//
-//                        products.append(product)
-//                    }
-//                }
-//
-//                DispatchQueue.main.async {
-//                    self.collectionView.reloadData()
-//                }
-//
-//
-//            }
-//            catch let error {
-//                print("parse error: \(error.localizedDescription)")
-//            }
-//
-//        }
-        
-//    }
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         self.searchResult = searchText
         
-        getProducts()
+        setupInitial()
         
         
     }
@@ -242,8 +233,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print("Testing")
         
         let item = indexPath.row
         
